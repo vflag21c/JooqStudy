@@ -1,0 +1,27 @@
+buildscript {
+	ext {
+		jooqVersion = '3.19.5'
+	}
+}
+
+plugins {
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation "org.jooq:jooq-codegen:${jooqVersion}"
+	runtimeOnly 'com.mysql:mysql-connector-j:8.2.0'
+}
